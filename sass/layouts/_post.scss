@@ -1,0 +1,21 @@
+.post
+{
+  display: grid;
+  grid-template-columns: $grid;
+  grid-auto-flow: row;
+
+  &__body,
+  &__categories,
+  & .comments
+  {
+    grid-column: 2 / span 1;
+  }
+
+  &__body
+  {
+    & *:not(:last-child)
+    {
+      margin-bottom: 1rem;
+    }
+  }
+}

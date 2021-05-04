@@ -1,0 +1,15 @@
+.series
+{
+  display: grid;
+  grid-template-columns: $grid;
+
+  &__body
+  {
+    grid-column: 2 / span 1;
+  }
+
+  &__news
+  {
+    @include race-report__items;
+  }
+}

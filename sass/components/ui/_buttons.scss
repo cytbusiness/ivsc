@@ -1,0 +1,21 @@
+.btn,
+.comments button
+{
+  padding: .8rem 2rem;
+  font-size: $fsdefault;
+  font-family: $fbase;
+  text-transform: uppercase;
+}
+
+.comments button[type="submit"],
+.btn--success
+{
+  background-color: $csuccess;
+  outline: none;
+  border: none;
+  color: $csuccesst;
+  border-radius: .2rem;
+  border-bottom: 1px solid #1b983c;
+  border-left: 1px solid #20b649;
+  border-right: 1px solid #20b649;
+}

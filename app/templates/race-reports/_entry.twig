@@ -1,0 +1,46 @@
+{% extends "_layout" %}
+
+{% set title = (entry.title is defined) ? entry.title ~ ' - ' ~ siteName : siteName  %}
+
+{% block content %}
+  {% if entry.level > 1 %}
+    <ul class="breadcrumbs">
+      {% for crumb in entry.getAncestors() %}
+        <li class="breadcrumbs__item">{{ crumb.getLink() }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <main class="post">
+    <article class="post__body">
+      <header class="post__header">
+        <h1 class="post__title">{{ entry.title }}</h1>
+        <p><time datetime="{{ entry.postDate | date('d-M-Y') }}">{{ entry.postDate | date('d M Y') }}</time></p>
+        <p class="text__line">{{ entry.summary }}</p>
+        {# Feature image #}
+        {% if entry.featureImage|length %}
+          {% for image in entry.featureImage.all() %}
+            <img src="{{ image.url }}" alt="{{ image.title }}" class="post__image">
+          {% endfor %}
+        {% endif %}
+      </header>
+
+      {# Post content Matrix block #}
+      {% include "_includes/post-blocks" with { blocks: entry.postContent.all() } only %}
+    </article>
+
+    <aside class="post__categories">
+      {% for category in entry.postCategories.all() %}
+        <a href="{{ category.url }}" class="btn-tag">{{- category.title -}}</a>
+      {% endfor %}
+    </aside>
+
+    <aside class="comments">
+      <form class="comments__form" action="">
+        {{ craft.freeform.form("commentForm").render() }}
+      </form>
+    </aside>
+  </main>
+  {# Post categories #}
+  {% if entry.postCategories|length %}
+  {% endif %}
+{% endblock %}

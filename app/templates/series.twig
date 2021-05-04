@@ -1,0 +1,19 @@
+{% extends "_layout" %}
+
+{% set series = craft.categories.group('series') %}
+{% set categories = series.all() %}
+
+{% block content %}
+  <ul class="categories">
+    {% nav category in categories %}
+      <li>
+        <a href="{{ category.url }}">{{ category.title }}</a>
+        {% ifchildren %}
+          <ul>
+            {% children %}
+          </ul>
+        {% endifchildren %}
+      </li>
+    {% endnav %}
+  </ul>
+{% endblock %}

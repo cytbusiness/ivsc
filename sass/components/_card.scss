@@ -1,0 +1,15 @@
+.card
+{
+  padding: 1rem;
+  border: 1px solid $coutline;
+
+  &__imagebox
+  {
+    width: 100%;
+  }
+
+  & img
+  {
+    max-width: 100%;
+  }
+}

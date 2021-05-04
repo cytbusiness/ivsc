@@ -1,0 +1,31 @@
+{% extends "_layout" %}
+
+{% block content %}
+  <main class="index">
+    <article class="index__body">
+      {% if entry.heroImage|length %}
+        <header class="hero index__hero">
+          <div class="hero__text">
+            <h1 class="hero__title">{{ entry.heroTitle }}</h1>
+            <h2 class="hero__tagline">{{ entry.heroTagline }}</h2>
+          </div>
+          {% for image in entry.heroImage.all() %}
+            <img src="{{ image.url }}" alt="{{ image.title }}" class="hero__image">
+          {% endfor %}
+        </header>
+      {% endif %}
+      <section class="index__content">
+        {% if entry.introParagraph|length %}
+          <p>{{ entry.introParagraph }}</p>
+        {% endif %}
+        {% include "_includes/index-blocks" with { blocks: entry.bodyContent.all() } only %}
+      </section>
+      <aside class="index__news">
+        <h3 class="heading-sm">Race Reports</h3>
+        <ul class="news">
+          {% include "_includes/race-reports" %}
+        </ul>
+      </aside>
+    </article>
+  </main>
+{% endblock %}

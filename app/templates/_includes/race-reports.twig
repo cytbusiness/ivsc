@@ -1,0 +1,15 @@
+{% set pages = craft.entries.section('raceReports').level(1).all() %}
+{% for page in pages %}
+  <li class="card">
+    <h4 class="card__title heading-sm"><a href="{{ page.url }}" class="link-text">{{ page.title }}</a></h4>
+    <p><time datetime="{{ page.postDate | date('d-M-Y') }}">{{ page.postDate | date('d M Y') }}</time></p>
+    {% if page.featureImage|length %}
+      {% for image in page.featureImage.all() %}
+        <a class="card__imagebox" href="{{ page.url }}">
+          <img src="{{ image.url }}" alt="{{ image.title }}" class="card__image">
+        </a>
+      {% endfor %}
+    {% endif %}
+    <p>{{ page.summary }}</p>
+  </li>
+{% endfor %}

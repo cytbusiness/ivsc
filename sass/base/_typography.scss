@@ -1,0 +1,69 @@
+h1.post__title
+{
+  font-size: 2rem;
+  font-family: $fheading;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body
+{
+  font-family: $fbase;
+
+  p
+  {
+    font-size: $fsdefault;
+  }
+}
+
+.comments
+{
+  & label,
+  & input
+  {
+    font-size: $fsdefault;
+    font-family: $fbase;
+  }
+
+  & label
+  {
+    font-weight: normal;
+  }
+
+  & textarea
+  {
+    font-family: inherit;
+    font-size: $fsdefault;
+  }
+}
+
+.hero
+{
+  &__title
+  {
+    color: $cspot;
+    font-family: $fheading;
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+
+  &__tagline
+  {
+    color: $coutline;
+    font-size: 2rem;
+    font-family: $fbase;
+  }
+}
+
+.heading
+{
+  &-sm
+  {
+    font-size: 1.4rem;
+
+    &:not(:last-child)
+    {
+      margin-bottom: 1rem;
+    }
+  }
+}

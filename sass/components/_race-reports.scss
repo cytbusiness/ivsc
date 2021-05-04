@@ -1,0 +1,7 @@
+.race-reports__items
+{
+  display: grid;
+  grid-column: 2 / span 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}

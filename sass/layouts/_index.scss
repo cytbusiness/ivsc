@@ -1,0 +1,26 @@
+.index
+{
+  &__body
+  {
+    display: grid;
+    grid-template-columns: $grid;
+    overflow: hidden;
+  }
+
+  &__hero
+  {
+    grid-column: 1 / span 3;
+  }
+
+  &__content,
+  &__news
+  {
+    margin: 2rem;
+    grid-column: 2 / span 1;
+  }
+}
+
+.news
+{
+  @include race-report__items;
+}

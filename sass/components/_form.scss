@@ -1,0 +1,18 @@
+.comments
+{
+  &__form
+  {
+    & input,
+    & textarea
+    {
+      padding: .2rem;
+      border: 1px solid $coutline;
+      outline: none;
+    }
+
+    & textarea
+    {
+      height: 20vh;
+    }
+  }
+}

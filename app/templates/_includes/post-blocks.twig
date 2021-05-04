@@ -1,0 +1,9 @@
+{% for block in blocks %}
+  {% if block.type == 'text' %}
+    {{ block.text }}
+  {% elseif block.type == 'image' %}
+    {% for image in block.image.all() %}
+      <img src="{{ image.url }}" alt="{{ image.title }}" class="post__image" />
+    {% endfor %}
+  {% endif %}
+{% endfor %}

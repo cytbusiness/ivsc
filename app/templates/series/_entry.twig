@@ -1,0 +1,14 @@
+{% extends "_layout" %}
+
+{% block content %}
+  <main class="series">
+    <article class="series__body">
+      <h1 class="heading">{{ category.title }}</h1>
+      {{ category.description }}
+
+      <ul class="series__news">
+        {% include "_includes/race-reports" %}
+      </ul>
+    </article>
+  </main>
+{% endblock %}

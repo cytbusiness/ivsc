@@ -1,0 +1,14 @@
+{
+  "name": "ivsc-2021",
+  "version": "0.1.0",
+  "description": "IVSC Theme 2021",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "author": "Ben Ireland",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
